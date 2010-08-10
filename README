@@ -1,0 +1,14 @@
+The Chromium Project is the open source branch of Google's Chrome Browser.
+http://www.chromium.org/
+
+Chromium has a continuous build system that produces updates far more often than
+nightly. This can provide quite a challenge for the bleeding edge enthusiast.
+There are many scripts out there that help facilitate this. This is the only one
+that extracts the revision number from apps Info.Plist to decide whether or not
+to update. For this reason it is considered to be the best.
+
+Recent build history can be found at:
+http://build.chromium.org/buildbot/snapshots/chromium-rel-mac/
+
+More Detail:
+http://build.chromium.org/buildbot/waterfall/console
