@@ -2,6 +2,7 @@ Chrome Tools
 Chrome Tools is a collection of scripts that support users of Google's Chrome
 Browser and the Chromium Project. These include:
 chromium-updater.sh - Updates or installs the latest Chromium Browser.
+keyword-syncer.sh - Exports and imports custom search engines.
 
 The Chromium Project is the open source branch of Google's Chrome Browser.
 http://www.chromium.org/
