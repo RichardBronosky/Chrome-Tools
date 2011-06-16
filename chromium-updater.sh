@@ -4,8 +4,8 @@ set -o errexit
 
 TMP_DIR=/tmp/chromiumdownload
 APP_DIR=/Applications
-BASE_URL=http://build.chromium.org/f/chromium/snapshots/chromium-rel-mac/
-LATEST_VER=$(curl -sS $BASE_URL/LATEST)
+BASE_URL=http://v11.lscache4.c.bigcache.googleapis.com/chromium-browser-continuous/Mac
+LATEST_VER=$(curl -sS http://commondatastorage.googleapis.com/chromium-browser-continuous/Mac/LAST_CHANGE)
 # Either of these could change at any moment.
 FILE_NAME=chrome-mac.zip
 APP_NAME=Chromium.app
@@ -28,4 +28,4 @@ APP_NAME=$(basename ${FILE_NAME%%.zip}/*.app)
 [[ -d $APP_DIR/$APP_NAME ]] && mv $APP_DIR/$APP_NAME ./${APP_NAME%%.app}.$CURRENT_VER.app
 mv ${FILE_NAME%%.zip}/$APP_NAME $APP_DIR/$APP_NAME
 
-[[ $1 == '-o' ]] && open $APP_DIR/$APP_NAME
+
