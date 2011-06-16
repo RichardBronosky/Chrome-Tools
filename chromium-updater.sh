@@ -4,8 +4,8 @@ set -o errexit
 
 TMP_DIR=/tmp/chromiumdownload
 APP_DIR=/Applications
-BASE_URL=http://build.chromium.org/f/chromium/snapshots/chromium-rel-mac/
-LATEST_VER=$(curl -sS $BASE_URL/LATEST)
+BASE_URL=http://v11.lscache4.c.bigcache.googleapis.com/chromium-browser-continuous/Mac
+LATEST_VER=$(curl -sS http://commondatastorage.googleapis.com/chromium-browser-continuous/Mac/LAST_CHANGE)
 # Either of these could change at any moment.
 FILE_NAME=chrome-mac.zip
 APP_NAME=Chromium.app
