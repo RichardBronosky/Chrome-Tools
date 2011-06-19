@@ -4,8 +4,8 @@ set -o errexit
 
 TMP_DIR=/tmp/chromiumdownload
 APP_DIR=/Applications
-BASE_URL=http://v11.lscache4.c.bigcache.googleapis.com/chromium-browser-continuous/Mac
-LATEST_VER=$(curl -sS http://commondatastorage.googleapis.com/chromium-browser-continuous/Mac/LAST_CHANGE)
+BASE_URL=http://commondatastorage.googleapis.com/chromium-browser-continuous/Mac
+LATEST_VER=$(curl -sS $BASE_URL/LAST_CHANGE)
 # Either of these could change at any moment.
 FILE_NAME=chrome-mac.zip
 APP_NAME=Chromium.app
@@ -20,7 +20,7 @@ echo "Changelog (in clipboard): $CHANGELOG"
 [[ $LATEST_VER > $CURRENT_VER ]] && echo "Downloading." || { echo "Quitting."; exit 1; }
 
 mkdir -p $TMP_DIR && cd $TMP_DIR
-curl -O $BASE_URL/$LATEST_VER/$FILE_NAME
+curl -L -O $BASE_URL/$LATEST_VER/$FILE_NAME
 # I really wish they would create tar/gz files instead of zip files so that I could pipe curl to tar and not write the archive to disk.
 unzip -qq $FILE_NAME
 # Because this script rename the existing app with its version and moves it to the temp dir, it is safe to run while the app open.`
